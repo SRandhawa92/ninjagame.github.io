@@ -1064,6 +1064,23 @@ class Object extends AnimatedCharacter {
   }
 }
 
+class Star extends Object {
+  
+  //STAR IS A PROJECTILE THAT DETERMINES VELOCITY BASED ON AN OWNER
+  //CREATING A SUB-SUB-CLASS ALSO HELPS TRACK THE PROJECTILE
+  
+  AnimatedCharacter owner;
+  
+  Star(AnimatedCharacter owner, PVector pos) {
+    super(pos, new PVector(10*owner.turning, 0), star[0]);
+    timer = 120;
+    frames = star;
+    this.owner=owner;
+  }
+}
+
+
+
 class Obstacle {
   int WIDTH, HEIGHT;
   PVector pos;
